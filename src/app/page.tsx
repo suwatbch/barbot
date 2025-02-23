@@ -85,7 +85,7 @@ export default function Home() {
 
     // ส่งผลลัพธ์ไปยังเซิร์ฟเวอร์
     try {
-      await fetch("http://swmaxnet.com/submit-result", {
+      await fetch("https://tbservice.swmaxnet.com/submit-result", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ round: currentRound, winner }),
@@ -172,7 +172,7 @@ export default function Home() {
 
   const checkWebsite = async () => {
     try {
-      const response = await fetch("http://swmaxnet.com/predict");
+      const response = await fetch("https://tbservice.swmaxnet.com/predict");
       const data = await response.json();
 
       setMessage(`ผลการทำนาย: แนะนำให้เลือก ${data.prediction}`);
